@@ -9,7 +9,7 @@ Isaac Thomas
 // I'm doing it Momma! I'm COMMITING!
 
 Front Yard Sale
-For our project  
+For our project we are creating a website that is essentially 
 
 
 
