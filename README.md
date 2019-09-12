@@ -33,5 +33,6 @@ Recommended items will also be viewable to users based on keywords.
 
 Multiple clients will have access to server that contains the information about the biddable items.
 
-List of potential technologies being used: Since each user will have an account, we will need to use a database system to store all of the users and the items the users are auctioning. We will also need user interface for users to interact with the items they are bidding for. Additionally we will need a hypertext translators from html to the database. XAMPP will most likely be used to for the whole system since it contains both front end and back end applications.  
+List of potential technologies being used: 
+Since each user will have an account, we will need to use a database system to store all of the users and the items the users are auctioning. We will also need user interface for users to interact with the items they are bidding for. Additionally we will need a hypertext translators from html to the database. XAMPP will most likely be used to for the whole system since it contains both front end and back end applications.  
 
