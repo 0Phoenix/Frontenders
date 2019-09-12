@@ -8,6 +8,8 @@ Luci Tran
 Isaac Thomas 
 // I'm doing it Momma! I'm COMMITING!
 
+//Fiddlesticks
+
 Front Yard Sale
 
 For our project we are creating a website that is essentially is a bidding/selling site that has many different mechanics that users interact with. At its core, items are put up for auction and bid on by other users. Users and admin will have to create accounts to access this website, complete with authentication and authorization.  Username and password function will be available as well as an option to remain anonymous to other users. 
