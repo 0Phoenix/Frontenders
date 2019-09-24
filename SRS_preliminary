@@ -1,0 +1,149 @@
+Software Requirement Specification
+*ALL SUBJECT FOR CHANGE
+The Frontenders: Mark-Anthony Andrade, Isaac Thomas, Luci Tran, Thomas Truong
+
+Purpose:(Isaac)
+The goal of this project is to create a website application that allows clients to put items up for 
+auction and to allow other clients to bid for said items. 
+
+Scope:(Isaac)
+The “Front Yard Sale” is a website application that helps users get rid of unwanted items buy auctioning 
+off their items. Other users can bid for items they want available on the website application until the 
+auction timer ends. Auctioneers can provide information about the item being auctioned as well as set the 
+starting price, bid increment, and timer of the item. Administrators monitor suspicious activity of auctions 
+(fake items, cancel wins, etc.). 
+
+Product Perspective: (Isaac)
+
+	System Interfaces: (Isaac)
+  The Front Yard Sale system will contain user information, items auctioned, bidding prices, transaction 
+  information, and times of the auctions. This is needed to track the winners of an auction and where to 
+  send the item won. This information will be held on a single database because the clientele will only be 
+  held in the United States of America. Client/Server implementation will be needed for the client to 
+  communicate with the database (front-end and back-end) with the server being the DBMS (Database Management System).   
+
+	User Interfaces(Isaac):
+  A new user of the website application should see the popular items auctioned when opening the site as well as 
+  a sign-in/sign-up option on the left side of the page. If the user signs in, then the sign-in option will be 
+  replaced with more items on the auction and an option to change account settings on the “top right”. The sign-up 
+  option will take the user to insert information to create their account. Additionally, there will be a checkbox 
+  as an option of the sign-up process that allows the user to appear “anonymous”. This option can also be changed 
+  after account creation. Once the user has logged in, the search will also appear at the top of the website. 
+  The user will have the option to auction an item by clicking on a location TBD, or to bid for items by clicking 
+  on a location TBD. The location of payment option will be TBD. 
+
+	Hardware Interfaces: (Isaac)
+  The hardware interface for the system shall be required connection to the internet. This can be via wireless access 
+  network(WAN), local-area network (LAN), or ethernet.    
+
+	Software Interfaces: (Isaac)
+  The software we are using is XAMPP (X-Cross Platform, A-Apache, M-MariaDB, P-PHP, P-Perl). The software we will use 
+  provided by XAMPP will be MySQL for the database, phpMyAdmin to monitor the database, and Apache web server. HTTP 
+  protocol will be used using port 80. The versions of each software are below:
+
+    XAMPP 1.8.3
+    Apache 2.4.9
+    MySQL 5.6.16
+    phpMyAdmin 5.5.11
+	
+	Communication Interfaces: (Isaac)
+  The auction system will use Apache HTTP protocol to communicate on the internet with TCP/IP and will connect MySQL database. 
+
+	Memory Constraints: (Mark-Anthony)
+	TBD
+
+	Operations: (Mark-Anthony)
+  Throughout the program the user will have many operations to perform such as, bidding for an item from another user, 
+  placing an item up for auction.  There will also be certain operations that could happen without the user needing to be 
+  active, such as favoriting an item for later and receiving notifications about the status of the item.  
+
+	Site Adaptation Requirements: (Isaac)
+  TBD
+
+Production Functions: (Mark-Anthony)
+Bidding for an item:  When an item is up for auction the user will be able to place a bid for the item, every user will 
+be given an opportunity to outbid the previous bid for the item.
+
+Buyout Price:  During an auction a user may choose to pay the buyout price to immediately win the item.  
+This can only occur if the current bid is lower than the buyout price, once the bid is higher than the buyout price the 
+latest bid will be the set price for the item.
+
+Placing an item up for auction:  A user will be allowed to place an item up for auction on the website.  
+They will have to enter the name of the item, a description, a photo is required, and some more info about when 
+they want the auction to be held and for how long, as well as the buyout price. 
+
+User Characteristics: (Luci)
+Admin - have the ability to ban/suspend users and maintain overall inspection. Should be knowledgeable in maintaining 
+a website, higher level computer knowledge.
+User (Auctioneer/Bidder) - clients that can auction and bid items using a sign-in function with accounts. Have a basic 
+level of computer knowledge.
+
+Limitations: (Luci)
+Age limitation - users must be 18 years or older
+safety/security concerns (secure website)
+Browser functionality/reliability
+
+Assumptions and Dependencies: (Luci)
+Assume we have a working website
+Users know how to sign up for an account
+Users will actually auction items/no biddable items
+Shipping will be dealt through third party
+Credit cards are valid
+
+Apportioning of Requirements:
+TBD/NA
+
+Specific Requirements: (Thomas)
+The functional requirements of our website is the process of a user selling, bidding, the monetary transaction of an 
+item, and a list of recommended items. The user has to be able to create an account and login. A user with an account 
+has to be able to put any item deemed legal and appropriate by either the system or administrator. A user selling an 
+item must be able to set the starting bid, and time range the item is open for auction. After an item is available for 
+auction, users excluding the seller must be able to make a bid at a price of their choosing with the minimum set by the 
+starting bid. The website must keep track of the current highest bid made by a user and remember said user until the next 
+highest bid. After the time window for an item to be auctioned closes, the current highest bidder must proceed with the 
+monetary transaction process to pay for the item. The monetary transaction process must include transferring money from 
+the buying user to the selling user as well as a small percentage towards an account approved for the website’s profits. 
+The user must be able to see a list of recommended items after a successful monetary transaction and during the bidding.
+
+The performance requirements of the website is to keep up with which user has the highest bid and have multiple users bid 
+at the same time.
+
+The design constraints of the website are currently to be as simple as possible as no team member has prior experience 
+with creating a website with multi-user capacity. Additionally, the cost of creating the website must be kept as close 
+to zero dollars as possible.
+
+External Interfaces: (Thomas)
+The user interface of the website is graphical and text based. There will be graphical icons that serve as links to a 
+section of the website to perform a functionality. Text that makes up an item’s name will be able to serve as a link to 
+move the user to that item’s auction page if available.
+
+The hardware interfaces are the keyboard, mouse, and scroll wheel for user input.
+
+The software interface is the connection between the website and a monetary transaction system that handles money between 
+two users and an approved account to hold the website’s profits.
+
+The communication interface required to use the website is a web browser, email, and standard network server 
+communication protocols.
+
+Functions: (Thomas)
+This section is to be determined after researching how to create a website and what is needed for a successful auction process.
+
+Usability Requirements: (Thomas)
+The user must be able to move into different sections of the website such as from a search results page to the auction page. 
+ther usability requirements are to be determined after researching how to create a website and what is needed for a successful 
+auction process.
+
+Performance Requirements: (Luci)
+Support at least 3 users at once. (TBD)
+Response time to a bid should less than 5 seconds.
+Login should should take less than 5 seconds.
+Once an item is up for auction, users will be able to see it instantly when refreshed.
+Banning/suspensions should be in effect within 5 seconds of admins input.
+Bidding is real time, able to see the timer & top bid.
+
+Verification:
+TBD / NA
+
+Supporting Information: (Isaac)
+Entity-Relationship Diagram (ERD)
+TBD UML
