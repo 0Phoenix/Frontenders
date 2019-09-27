@@ -2,6 +2,8 @@ Software Requirement Specification
 *ALL SUBJECT FOR CHANGE
 The Frontenders: Mark-Anthony Andrade, Isaac Thomas, Luci Tran, Thomas Truong
 
+(* MK: Please crosscheck grammar properly in the entire document *)
+
 Purpose:(Isaac)
 The goal of this project is to create a website application that allows clients to put items up for 
 auction and to allow other clients to bid for said items. 
@@ -24,13 +26,13 @@ Product Perspective: (Isaac)
 
 	User Interfaces(Isaac):
   A new user of the website application should see the popular items auctioned when opening the site as well as 
-  a sign-in/sign-up option on the left side of the page. If the user signs in, then the sign-in option will be 
+  a sign-in/sign-up option on the left side of the page (*MK: You dont need to specify locations of UI features *). If the user signs in, then the sign-in option will be 
   replaced with more items on the auction and an option to change account settings on the “top right”. The sign-up 
   option will take the user to insert information to create their account. Additionally, there will be a checkbox 
   as an option of the sign-up process that allows the user to appear “anonymous”. This option can also be changed 
   after account creation. Once the user has logged in, the search will also appear at the top of the website. 
   The user will have the option to auction an item by clicking on a location TBD, or to bid for items by clicking 
-  on a location TBD. The location of payment option will be TBD. 
+  on a location TBD. The location of payment option will be TBD. (* MK: Please add rest of UI requirements by considering various screens )
 
 	Hardware Interfaces: (Isaac)
   The hardware interface for the system shall be required connection to the internet. This can be via wireless access 
@@ -49,7 +51,7 @@ Product Perspective: (Isaac)
 	Communication Interfaces: (Isaac)
   The auction system will use Apache HTTP protocol to communicate on the internet with TCP/IP and will connect MySQL database. 
 
-	Memory Constraints: (Mark-Anthony)
+	Memory Constraints: (Mark-Anthony) (* MK: You can omit memory constraints, operations, and site adaptation as I did not teach you in the class *)
 	TBD
 
 	Operations: (Mark-Anthony)
@@ -78,7 +80,7 @@ a website, higher level computer knowledge.
 User (Auctioneer/Bidder) - clients that can auction and bid items using a sign-in function with accounts. Have a basic 
 level of computer knowledge.
 
-Limitations: (Luci)
+Limitations: (Luci) (* MK: Please write complete sentences *)
 Age limitation - users must be 18 years or older
 safety/security concerns (secure website)
 Browser functionality/reliability
@@ -93,7 +95,8 @@ Credit cards are valid
 Apportioning of Requirements:
 TBD/NA
 
-Specific Requirements: (Thomas)
+Specific Requirements: (Thomas) (Assign each functional requirement an ID, Please mention bidder's, auctioner's, and 
+admin's requirements separately *)
 The functional requirements of our website is the process of a user selling, bidding, the monetary transaction of an 
 item, and a list of recommended items. The user has to be able to create an account and login. A user with an account 
 has to be able to put any item deemed legal and appropriate by either the system or administrator. A user selling an 
@@ -106,11 +109,11 @@ the buying user to the selling user as well as a small percentage towards an acc
 The user must be able to see a list of recommended items after a successful monetary transaction and during the bidding.
 
 The performance requirements of the website is to keep up with which user has the highest bid and have multiple users bid 
-at the same time.
+at the same time. (*MK: Give specific value *)
 
 The design constraints of the website are currently to be as simple as possible as no team member has prior experience 
 with creating a website with multi-user capacity. Additionally, the cost of creating the website must be kept as close 
-to zero dollars as possible.
+to zero dollars as possible. (* MK: Talk about operating systems, programming languages etc. Check slides *)
 
 External Interfaces: (Thomas)
 The user interface of the website is graphical and text based. There will be graphical icons that serve as links to a 
@@ -125,7 +128,7 @@ two users and an approved account to hold the website’s profits.
 The communication interface required to use the website is a web browser, email, and standard network server 
 communication protocols.
 
-Functions: (Thomas)
+Functions: (Thomas) (* MK: Please fill rest of the sections. Ask me or TAs for the help if you are stuck or confused *)
 This section is to be determined after researching how to create a website and what is needed for a successful auction process.
 
 Usability Requirements: (Thomas)
@@ -133,7 +136,7 @@ The user must be able to move into different sections of the website such as fro
 ther usability requirements are to be determined after researching how to create a website and what is needed for a successful 
 auction process.
 
-Performance Requirements: (Luci)
+Performance Requirements: (Luci) (* MK: Redundant. Please use complete sentences *)
 Support at least 3 users at once. (TBD)
 Response time to a bid should less than 5 seconds.
 Login should should take less than 5 seconds.
