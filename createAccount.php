@@ -58,8 +58,8 @@
     }
 
 //define variables to empty values
-$firstname = $lastname = $age = $password = $gender = $anon = "";
-$firstnameErr = $lastnameErr = $ageErr = $passwordErr = $genderErr = "";
+$firstname = $lastname = $username = $age = $password = $gender = $anon = "";
+$firstnameErr = $lastnameErr = $usernameErr = $ageErr = $passwordErr = $genderErr = "";
 //Trims data and add user and checks required fields
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $firstname = test_input($_POST["firstname"]);
 
     //Checks if name is only letters and whitespace
-    if(!preg_match("/^[a-zA-Z]*$/", $name)) {
+    if(!preg_match("/^[a-zA-Z]*$/", $firstname)) {
       $firstnameErr = "Only letters and whitespace allowed";
     }
   }
@@ -82,8 +82,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   else {
     $lastname = test_input($_POST["lastname"]);
 
-    if(!preg_match("/^[a-zA-Z]*$/", $name)) {
+    if(!preg_match("/^[a-zA-Z]*$/", $lastname)) {
       $lastnameErr = "Only letters and whitespace allowed";
+    }
+  }
+
+  if(empty($_POST["username"])) {
+    $usernameErr = "User Name is required";
+  }
+  else {
+    $username = test_input($_POST["username"]);
+
+    if(!preg_match("/^[a-zA-Z]*$/", $username)) {
+      $usernameErr = "Only letters and whitespace allowed";
     }
   }
 
@@ -141,6 +152,9 @@ function test_input($data){
   Last name:<br>
   <input type="text" name="lastname">
   <span class="error">* <?php echo $lastnameErr; ?></span><br>
+  Username:<br>
+  <input type="text" name="username">
+  <span class="error">* <?php echo $usernameErr; ?></span><br>
   Age:<br>
   <input type="number" name="age">
   <span class="error">* <?php echo $ageErr; ?></span><br>
@@ -159,6 +173,23 @@ function test_input($data){
 
 
 <?php include "footer.html"; ?>
+
+<?php 
+//MySQL server info
+$servername = "localhost";
+$SQLusername = "root";
+$SQLpassword = "";
+$DBname = "users";
+
+//Create connection
+$conn = new mysqli($servername, $SQLusername, $SQLpassword, $DBname);
+
+//Check connection
+if($conn->connect_error){
+  die("Connection failed: " . $conn->connect->error);
+}
+echo "Connected Successfully<br>";
+?>
 
 </body>
 </html>
