@@ -189,6 +189,17 @@ if($conn->connect_error){
   die("Connection failed: " . $conn->connect->error);
 }
 echo "Connected Successfully<br>";
+
+//Add user to the MySQL database
+$sql = "INSERT INTO users (firstname, lastname, username, password, age, gender, anon)
+VALUES ('$firstname', '$lastname', '$username', '$password', '$age', '$gender', '$anon')";
+  
+if($conn->query($sql) === TRUE) {
+  echo "Account created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+  $conn->close();
 ?>
 
 </body>
