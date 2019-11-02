@@ -17,9 +17,10 @@
   }
     echo "Connected Successfully<br>";
 
-  $productTitle = $conn->real_escape_string($_POST['productTitle']);
+  $productName = $conn->real_escape_string($_POST['productName']);
   $productDescription = $conn->real_escape_string($_POST['productDescription']);
   $startprice = $conn->real_escape_string($_POST['startprice']);
+  $biddate = $conn->real_escape_string($_POST['biddate']);
   $bidtime = $conn->real_escape_string($_POST['bidtime']);
 
 
@@ -30,8 +31,8 @@
   }
 
   //Add user to the MySQL database
-  $sql = "INSERT INTO auction (productTitle, productDescription, startprice, bidtime)
-  VALUES ('$productTitle', '$productDescription', '$startprice', '$bidtime')";
+  $sql = "INSERT INTO auction (productName, productDescription, startprice, biddate, bidtime)
+  VALUES ('$productName', '$productDescription', '$startprice', '$biddate', '$bidtime')";
 
   if($conn->query($sql) === TRUE) {
     echo "Auction created successfully";

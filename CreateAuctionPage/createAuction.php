@@ -3,7 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="wnameth=device-wnameth, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,13 +14,13 @@
 
   <?php include 'DBauction.php'; ?>
 
-  <form action="createAuction.php" method="post">
+  <form action="createAuction.php" method="post" role="form">
    <!-- Auction Title -->
     <label for="Basic-Auction">Enter product title</label>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
       </div>
-      <input type="text" class="form-control" id="Basic-Auction" aria-describedby="basic-addon3" name="productTitle">
+      <input type="text" class="form-control" name="Basic-Auction" aria-describedby="basic-addon3" name="productName" required>
     </div>
 
     <!-- Auction Description -->
@@ -28,17 +28,17 @@
     <div class="input-group">
         <div class="input-group-prepend">
         </div>
-        <textarea class="form-control" aria-label="Auction Description" name="productDescription"></textarea>
+        <textarea class="form-control" aria-label="Auction Description" name="productDescription" required></textarea>
       </div>
 
     <!-- Auction Price -->
-    <label for="Basic-Auction">Enter starting bid price</label>
+    <label for="Basic-Auction">Enter starting bname price</label>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
           <span class="input-group-text">0.00</span>
         </div>
-        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="startprice">
+        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="startprice" required>
       </div>
 
     <!-- Auction Time-Period -->
@@ -47,24 +47,24 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Date and Time</span>
         </div>
-        <input type="text" aria-label="Date" class="form-control">
-        <input type="text" aria-label="Time" class="form-control" name="bidtime">
+        <input type="text" aria-label="Date" class="form-control" name="biddate" required>
+        <input type="text" aria-label="Time" class="form-control" name="bidtime" required>
       </div>
 
     <!-- Auction Photo -->
     <label for="Basic-Auction">Enter a photo of item</label>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+          <span class="input-group-text" name="inputGroupFileAddon01">Upload</span>
         </div>
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+          <input type="file" class="custom-file-input" name="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
         </div>
       </div>
 
       <!-- A button to confirm choices -->
-      <input type="button" name="createAuction" value="Confirm">
+      <input type="submit" class="btn btn-danger" name="createAuction" value="Confirm">
     </form>
 
 
