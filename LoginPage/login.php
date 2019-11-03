@@ -14,7 +14,7 @@
 
       //Once user submits
       if(isset($_POST['login'])){
-        $conn = new mysqli("localhost", "root", "", "users");
+        $conn = new mysqli("localhost", "root", "", "frontyardsale");
 
         $username = $conn->real_escape_string($_POST['username']);
         $password = $conn->real_escape_string($_POST['password']);
