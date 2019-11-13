@@ -43,6 +43,15 @@ if($conn->query($sql) === TRUE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+//Create bid table
+$sql = "CREATE TABLE `frontyardsale`.`bid` ( `bid_id` INT NOT NULL , `username` TEXT NOT NULL ,
+`auction` INT NOT NULL , `price` FLOAT NOT NULL , PRIMARY KEY (`bid_id`)) ENGINE = InnoDB;"
+if($conn->query($sql) === TRUE) {
+  //echo "Tables created<br>";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
 $conn->close();
 
 

@@ -1,4 +1,18 @@
+<html>
+<body>
+
+<form action="DBsearch.php" method="post">
 <?php
+
+//Gets the auction_id of the item being bid_id
+if(isset($_POST['clicked'])){
+  $_SESSION['auction_id'] = $row[$_POST['clicked']]['auction_id'];
+  echo $_SESSION['auction_id'];
+  echo $row[$_POST['clicked']]['auction_id'];
+  header("Location: ../CreateBid/bid.php");
+}
+
+
 if(isset($_POST["search"]))
 {
   if(session_status() === PHP_SESSION_NONE){
@@ -19,29 +33,37 @@ if(isset($_POST["search"]))
 	}
 	echo "Connected Successfully<br>";
 	echo $_SESSION['username'];
-	$sql = "SELECT name, description, minimumBid FROM auction";
+  echo "<br>";
+	$sql = "SELECT name, description, minimumBid, auction_id FROM auction";
 	$result = $conn->query($sql);
 
-	while ($row = mysqli_fetch_array($result)):
-		$item_name = $row['name'];
-		$item_des = $row['description'];
-		$item_min = $row['minimumBid'];
-		$output = "Item Name: $item_name <br> Item Description: $item_des <br> Minimum Bid: #item_min";
+
+  $j = 0;
+	while ($row[] = mysqli_fetch_array($result)):
+		$item_name = $row[$j]['name'];
+		$item_des = $row[$j]['description'];
+		$item_min = $row[$j]['minimumBid'];
+    //echo $row[$j]['auction_id'];
+
+
+
 ?>
-	<html>
-	<body>
-		<p>
-			<form action="searchResults.php" method="post">
-			<input type="submit" class="btn btn-danger" name="bid" value=<?php echo $item_name; ?>>
+
 			<br>
 			Description: <?php echo $item_des; ?>
 			<br>
-			Minimum Bid: <?php echo "$" . $item_min; ?>
-			</form>
-		</p>
-	</body>
-	</html>
+			Minimum Bid: <?php echo "$" . $item_min; ?> <br>
+      <?php echo '<input type="submit" class="btn btn-danger" name="clicked['.$j.']" value='.$item_name.' />'; ?>
+      <br>
+
 <?php
+  $j = $j + 1;
+
 	endwhile;
 }
+
 ?>
+</form>
+
+</body>
+</html>

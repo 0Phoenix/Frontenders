@@ -50,12 +50,12 @@
 <br><br>
 
 <form action="searchResults.php" method="post">
-  <input type="submit" class="btn btn-danger" name="search" value="search">
+  <input type="submit" class="btn btn-danger" name="search" value="Search">
 </form>
 
 <!-- Search Results -->
 <?php include 'DBsearch.php'; ?>
-<?php //include 'DBBid.php'; ?>
+
 
 </div> <!-- container -->
 
