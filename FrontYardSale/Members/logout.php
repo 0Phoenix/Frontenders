@@ -1,7 +1,4 @@
 <?php
-
-if(isset($_POST["logout"]))
-{
 	if(session_status() === PHP_SESSION_NONE){
     session_start();
   }
@@ -13,5 +10,5 @@ if(isset($_POST["logout"]))
 	session_destroy();
 
 	header("Location: ../");
-}
+
 ?>

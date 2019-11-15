@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="en">
   <?php include "DBbid.php";
-        
   if(session_status() === PHP_SESSION_NONE){
     session_start();
-  }?>
+  }
+  if(isset($_GET['auction_id'])){
+    $_SESSION['auction_id'] = $_GET['auction_id'];
+  }
+
+
+  ?>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,7 +21,9 @@
     <title>Create Bid</title>
   </head>
   <body>
-
+  <div class="page-header">
+    <h1 class="display-1 text-center">Bid Page</h1>
+  </div> <!-- page-header -->
  <!-- DISPLAY IMAGE & DESCRIPTION OF PRODUCT -->
 
 <form action="bid.php" method="post" role="form">
@@ -27,7 +34,7 @@
           <span class="input-group-text">$</span>
           <span class="input-group-text">0.00</span>
         </div>
-        <input type="text" class="form-control" name="price" aria-label="Dollar amount (with dot and two decimal places)">
+        <input type="text" class="form-control" name="price" aria-label="Dollar amount (with dot and two decimal places)" required>
       </div>
 
 
@@ -35,6 +42,7 @@
       <input type="submit" class="btn btn-danger" name="bidConfirm" value="Confirm">
 </form>
 
+<a href="../Members/searchResults.php" type="button" class="btn btn-danger">Cancel Bid</a>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

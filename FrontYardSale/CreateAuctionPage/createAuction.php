@@ -68,6 +68,7 @@
       <input type="submit" class="btn btn-danger" name="createAuction" value="Confirm">
     </form>
 
+    <a href="../Members/searchResults.php" type="button" class="btn btn-danger">Cancel Auction</a>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

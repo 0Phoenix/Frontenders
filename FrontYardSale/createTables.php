@@ -35,7 +35,8 @@ if($conn->query($sql) === TRUE) {
 
 //Create auction table
 $sql = "CREATE TABLE IF NOT EXISTS `frontyardsale`.`auction` ( `name` TEXT NOT NULL , `description` TEXT NOT NULL , `minimumBid` INT NOT NULL ,
-`biddate` DATE NOT NULL , `bidtime` TIME NOT NULL , `highestbid` FLOAT NULL DEFAULT NULL , `highestuser` INT NULL DEFAULT NULL ) ENGINE = InnoDB";
+`biddate` DATE NOT NULL , `bidtime` TIME NOT NULL , `highestbid` FLOAT NULL DEFAULT NULL , `highestuser` INT NULL DEFAULT NULL,
+`auction_id` INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(`auction_id`)) ENGINE = InnoDB";
 
 if($conn->query($sql) === TRUE) {
   //echo "Tables created<br>";
@@ -44,8 +45,8 @@ if($conn->query($sql) === TRUE) {
 }
 
 //Create bid table
-$sql = "CREATE TABLE `frontyardsale`.`bid` ( `bid_id` INT NOT NULL , `username` TEXT NOT NULL ,
-`auction` INT NOT NULL , `price` FLOAT NOT NULL , PRIMARY KEY (`bid_id`)) ENGINE = InnoDB;"
+$sql = "CREATE TABLE IF NOT EXISTS `frontyardsale`.`bid` ( `bid_id` INT NOT NULL AUTO_INCREMENT, `username` TEXT NOT NULL ,
+`auction` INT NOT NULL , `price` FLOAT NOT NULL , PRIMARY KEY (`bid_id`)) ENGINE = InnoDB;";
 if($conn->query($sql) === TRUE) {
   //echo "Tables created<br>";
 } else {

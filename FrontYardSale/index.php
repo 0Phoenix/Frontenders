@@ -9,11 +9,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Front Yard Sale Homepage</title>
   </head>
   <body>
-    <a type="button" class="btn btn-primary" href="CreateAccountPage\createAccount.php">Create Account</a>
-    <a type="button" class="btn btn-danger"href="LoginPage\login.php">Login</a>
+    <div class="d-flex justify-content-between">
+      <div>
+        <a type="button" class="btn btn-primary" href="CreateAccountPage\createAccount.php">Create Account</a>
+      </div>
+      <div>
+        <a type="button" class="btn btn-danger"href="LoginPage\login.php">Login</a>
+      </div>
+    </div>
+
+
+
     <h1 class="display-1 text-center">Front Yard Sale</h1>
 
 

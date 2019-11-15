@@ -15,7 +15,7 @@
   if($conn->connect_error){
     die("Connection failed: " . $conn->connect->error);
   }
-    echo "Connected Successfully<br>";
+    //echo "Connected Successfully<br>";
 
   $productName = $conn->real_escape_string($_POST['productName']);
   $productDescription = $conn->real_escape_string($_POST['productDescription']);
