@@ -6,7 +6,7 @@ $SQLpassword = "";
 $DBname = "frontyardsale";
 
 //Create connection
-$conn = new mysqli($servername, $SQLusername, $SQLpassword, $DBname);
+$conn = new mysqli($servername, $SQLusername, $SQLpassword);
 
 //Check connection
 if($conn->connect_error){
@@ -21,7 +21,10 @@ if($conn->query($sql) === TRUE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+$conn->close();
 
+//Create connection
+$conn = new mysqli($servername, $SQLusername, $SQLpassword, $DBname);
 
 //Create user table
 $sql = "CREATE TABLE IF NOT EXISTS `frontyardsale`.`users` ( `firstname` TEXT NOT NULL , `lastname` TEXT NOT NULL , `username` TEXT NOT NULL ,
