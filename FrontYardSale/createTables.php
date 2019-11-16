@@ -49,7 +49,7 @@ if($conn->query($sql) === TRUE) {
 
 //Create bid table
 $sql = "CREATE TABLE IF NOT EXISTS `frontyardsale`.`bid` ( `bid_id` INT NOT NULL AUTO_INCREMENT, `username` TEXT NOT NULL ,
-`auction` INT NOT NULL , `price` FLOAT NOT NULL , PRIMARY KEY (`bid_id`)) ENGINE = InnoDB;";
+`auction_id` INT NOT NULL , `price` FLOAT NOT NULL , PRIMARY KEY (`bid_id`)) ENGINE = InnoDB;";
 if($conn->query($sql) === TRUE) {
   //echo "Tables created<br>";
 } else {
