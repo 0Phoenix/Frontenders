@@ -37,7 +37,7 @@
 			  Minimum Bid: $'.$item_min.'<br>
         Auction End Date: '.$item_date.'<br>
         Auction End Time: '.$item_time.'<br>
-        <a type="button" class="btn btn-info" href="../Createbid/bid.php?auction_id=$item_id">Bid on '.$item_name.'</a><br>
+        <a type="button" class="btn btn-info" href="../Createbid/bid.php?auction_id='.$item_id.'">Bid on '.$item_name.'</a><br>
         <br>';
 
     endwhile;
