@@ -1,5 +1,6 @@
 <?php
   require '../LoginPage/logincheck.php';
+  require 'checkAuctionStatus.php';
   if(session_status() === PHP_SESSION_NONE){
     session_start();
   }
@@ -38,14 +39,16 @@
     <h1 class="display-1 text-center">Front Yard Sale Auctions</h1>
   </div> <!-- page-header -->
 
-  <?php echo '<h3 class="display-6 text-center">Welcome '.$_SESSION['username'].'</h3><br>'; ?>
+  <?php echo '<h3 class="display-6 text-center">Welcome '.$_SESSION['username'].'</h3><br>';
+        require 'checkForWinningAuction.php';
+      ?>
   <div class="input-group mb-3">
     <div class="input-group-prepend">
 
       <form action="searchResults.php" method="post">
 
         <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" name="item">
-        <input type="submit" class="btn btn-outline-secondary" name="search" value="Search">
+        <input type="submit" class="btn btn-primary" name="search" value="Search">
       </form>
 
     </div>

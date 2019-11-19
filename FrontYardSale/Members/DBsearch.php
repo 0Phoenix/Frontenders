@@ -27,18 +27,21 @@
         $item_id =  $row['auction_id'];
         $item_date = $row['biddate'];
         $item_time = $row['bidtime'];
-
-        //$_SESSION['end_time']=$item_date;
-        //$_SESSION['start_time']=date("Y-m-d H:i:s");
+        $item_date = $item_date.' '.$item_time;
 
         echo '<br>
         Item Name: '.$item_name.'<br>
 		    Description: '.$item_des.'<br>
 			  Minimum Bid: $'.$item_min.'<br>
-        Auction End Date: '.$item_date.'<br>
-        Auction End Time: '.$item_time.'<br>
-        <a type="button" class="btn btn-info" href="../Createbid/bid.php?auction_id='.$item_id.'">Bid on '.$item_name.'</a><br>
-        <br>';
+        Auction End Date: '.$item_date.'<br>';
+        $today = date("Y-m-d H:i:s");
+        if($today > $item_date) {
+            echo '<button class="btn btn-outline-secondary" type="button" id="button-addon1">This Auction has Ended</button>';
+        } else {
+            echo'<a type="button" class="btn btn-info" href="../Createbid/bid.php?auction_id='.$item_id.'&item_name='.$item_name.'&minBid='.$item_min.'">
+            Bid on '.$item_name.'</a><br>';
+        }
+        echo '<br>';
 
     endwhile;
   }

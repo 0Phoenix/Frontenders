@@ -33,8 +33,8 @@
     </form>
 
     <!-- database library -->
-    <?php include 'DBLogin.php'; ?>
-
+    <?php include 'DBLogin.php'; ?><br>
+    <a href="../index.php" class="btn btn-primary">Back to Homepage</a>
     </div> <!-- container -->
 
     <!-- These two need to be at the bottom for some reason -->

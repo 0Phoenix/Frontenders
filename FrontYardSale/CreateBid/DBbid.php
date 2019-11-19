@@ -32,6 +32,32 @@
     return TRUE;
   }
 
+  //Checks if user has higest bid
+  function checkHighestBid($conn, $auction_id, $username, $price) {
+    $sql = "SELECT auction_id, highestbid FROM auction
+    WHERE auction_id = '$auction_id'";
+
+    $result = $conn->query($sql);
+    $data = mysqli_fetch_array($result);
+    if(!$data){
+      echo "Error: ".$conn->error."<br>";
+    }
+
+    //Checks for first bidder of the item
+    if($price > $data['highestbid']) {
+      $sql = "UPDATE auction
+      SET highestbid = '$price', highestuser = '$username'
+      WHERE auction_id = '$auction_id'";
+
+      //Inserts user into auction table
+      if(!($conn->query($sql) === TRUE)) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+    }
+
+
+  }
+
   //User selects item to bid on
   if(isset($_POST["bidConfirm"])) {
     if(session_status() === PHP_SESSION_NONE){
@@ -53,7 +79,7 @@
 	  $username = $_SESSION['username'];
     $auction_id = $_SESSION['auction_id'];
     $price = $_POST['price'];
-
+    $_SESSION['price'] = $price;
     //Checks if
     if(checkMinBid($conn, $auction_id, $price) == TRUE) {
       //Checks if user already bid
@@ -67,8 +93,13 @@
         } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
         }
+
+        checkHighestBid($conn, $auction_id, $username, $price);
+        header("Location: Successfulbid.php");
       }
     }
+
+
 
   }
 ?>

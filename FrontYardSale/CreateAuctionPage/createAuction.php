@@ -33,7 +33,7 @@
       </div>
 
     <!-- Auction Price -->
-    <label for="Basic-Auction">Enter starting bname price</label>
+    <label for="Basic-Auction">Enter minimum bid price</label>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>

@@ -1,5 +1,8 @@
 <?php
 
+  if(session_status() === PHP_SESSION_NONE){
+    session_start();
+  }
   //After verifying
   if(isset($_POST["createAuction"])) {
   //MySQL server info
@@ -22,10 +25,11 @@
   $minimumBid = $conn->real_escape_string($_POST['startprice']);
   $biddate = $conn->real_escape_string($_POST['biddate']);
   $bidtime = $conn->real_escape_string($_POST['bidtime']);
-
+  $status = 'Ongoing';
+  $user_id = $_SESSION['user_id'];
   //Add user to the MySQL database
-  $sql = "INSERT INTO auction (name, description, minimumBid, biddate, bidtime, highestbid, highestuser, auction_id)
-  VALUES ('$productName', '$productDescription', '$minimumBid', '$biddate', '$bidtime', NULL, NULL, NULL)";
+  $sql = "INSERT INTO auction (name, description, minimumBid, biddate, bidtime, highestbid, highestuser, status, auction_id, owner_id)
+  VALUES ('$productName', '$productDescription', '$minimumBid', '$biddate', '$bidtime', NULL, NULL, '$status', NULL, '$user_id')";
 
   if($conn->query($sql) === TRUE) {
     echo "Auction created successfully";

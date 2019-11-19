@@ -6,6 +6,8 @@
   }
   if(isset($_GET['auction_id'])){
     $_SESSION['auction_id'] = $_GET['auction_id'];
+    $_SESSION['item_name'] = $_GET['item_name'];
+    $_SESSION['minimumBid'] = $_GET['minBid'];
   }
 
 
@@ -22,13 +24,13 @@
   </head>
   <body>
   <div class="page-header">
-    <h1 class="display-1 text-center">Bid Page</h1>
+    <h1 class="display-1 text-center">Bid for item: <?php echo $_SESSION['item_name'];?></h1>
   </div> <!-- page-header -->
  <!-- DISPLAY IMAGE & DESCRIPTION OF PRODUCT -->
 
 <form action="bid.php" method="post" role="form">
     <!-- Enter Bid -->
-    <label for="Basic-Auction">Enter bid </label>
+    <label for="Basic-Auction">Enter bid <?php echo '(Minimum Bid Price: $'.$_SESSION['minimumBid'].')';?> </label>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>

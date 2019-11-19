@@ -32,19 +32,24 @@
   }
 
   //Add user to the MySQL database
-  $sql = "INSERT INTO users (firstname, lastname, username, email, password, age, gender, anon)
-  VALUES ('$firstname', '$lastname', '$username', '$email', '$password', '$age', '$gender', '$anon')";
+  $sql = "INSERT INTO users (firstname, lastname, username, email, password, age, gender, anon, user_id)
+  VALUES ('$firstname', '$lastname', '$username', '$email', '$password', '$age', '$gender', '$anon', NULL)";
 
   if($conn->query($sql) === TRUE) {
     echo "Account created successfully";
     session_start();
 
+    $sql = "SELECT user_id FROM users WHERE username = '$username' AND firstname='$firstname' AND lastname='$lastname'";
+    $result = $conn->query($sql);
+    $row = mysqli_fetch_array($result);
+
     $_SESSION['username'] = $username;
     $_SESSION['loggedin'] = 1;
+    $_SESSION['user_id'] = $row['user_id'];
 
     header("Location: ../Members/searchResults.php");
   } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: Creating account <br>" . $conn->error;
   }
   $conn->close();
 
