@@ -29,17 +29,11 @@
         echo '<h4 class="display-6 text-center">Congratulations! You have won item '.$row['name'].' for $'.$row['highestbid'].'<br>';
         echo '<div class="container>"
                 <div class="row">
-                  <div class="col texty-center"
-                    <a type="button" class="btn btn-primary" href="transactions.html">Claim Item</a>
+                  <div class="center">
+                    <a type="button" class="btn btn-success" href="transaction.php?auction_id='.$row['auction_id'].'&price='.$row['highestbid'].'">Claim Item</a>
                   </div>
                 </div>
-              </div>';
-
-        $status = 'Complete';
-        //Update auctrion status to complete
-        $sql = "UPDATE auction
-        SET status = '$status'
-        WHERE highestuser = '$username'";
+              </div></h4><br>';
 
         if($conn->query($sql) === FALSE) {
           echo 'Database connection error '.$conn->error.'<br>';

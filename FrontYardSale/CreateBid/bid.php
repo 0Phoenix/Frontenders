@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <?php include "DBbid.php";
+  <?php
   if(session_status() === PHP_SESSION_NONE){
     session_start();
   }
@@ -25,7 +25,9 @@
   <body>
   <div class="page-header">
     <h1 class="display-1 text-center">Bid for item: <?php echo $_SESSION['item_name'];?></h1>
+
   </div> <!-- page-header -->
+  <hr>
  <!-- DISPLAY IMAGE & DESCRIPTION OF PRODUCT -->
 
 <form action="bid.php" method="post" role="form">
@@ -45,6 +47,8 @@
 </form>
 
 <a href="../Members/searchResults.php" type="button" class="btn btn-danger">Cancel Bid</a>
+
+<?php include "DBbid.php"; ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -12,7 +12,7 @@
   <meta charset="utf-8" />
   <!-- Tell brower to use latest version -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Search For items</title>
+  <title>Auction & Bid</title>
 
 	<!-- Need this to use bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -27,7 +27,9 @@
     <div>
       <a type="button" class="btn btn-primary" href="../CreateAuctionPage/createAuction.php">Create Auction</a>
     </div>
-      <br><br>
+    <div class="center">
+      <a type="button" class="btn btn-success" href="../AccountSettingsPage/accountSettings.php">Account Settings</a>
+    </div>
     <div>
       <a type="button" class="btn btn-danger" href="logout.php">Logout</a>
     </div>
@@ -38,7 +40,7 @@
   <div class="page-header">
     <h1 class="display-1 text-center">Front Yard Sale Auctions</h1>
   </div> <!-- page-header -->
-
+  <hr>
   <?php echo '<h3 class="display-6 text-center">Welcome '.$_SESSION['username'].'</h3><br>';
         require 'checkForWinningAuction.php';
       ?>
@@ -48,7 +50,7 @@
       <form action="searchResults.php" method="post">
 
         <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" name="item">
-        <input type="submit" class="btn btn-primary" name="search" value="Search">
+        <input type="submit" class="btn btn-primary" name="search" value="Search Items">
       </form>
 
     </div>

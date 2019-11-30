@@ -24,9 +24,9 @@
     $today = date("Y-m-d H:i:s");
     $item_date = $row['biddate'].' '.$row['bidtime'];
     $status = 'Ended';
-    
+
     //Checks if auction is over
-    if ($today > $item_date) {
+    if ($today > $item_date && $row['status'] != 'Complete') {
       $auction_id = $row['auction_id'];
       //Change status to Ended
       $sql = "UPDATE auction

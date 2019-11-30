@@ -19,41 +19,49 @@
 	  }
 	  //echo "Connected Successfully<br>";
 
-	  $sql = "SELECT * FROM auction";
-	  $result = $conn->query($sql);
+    if(strlen($_POST["item"]) > 0) {
+      $item_search = $_POST['item'];
+      $sql = "SELECT * FROM auction WHERE name = '$item_search'";
+    }
+    else {
+	     $sql = "SELECT * FROM auction";
+    }
+    $result = $conn->query($sql);
 
-    //$today=('Y-m-d H:i:s', timezone_open('America/Chicago'));
+    if($result->num_rows < 0) {
+      echo "No items matched your search<br>";
+    }
+    else {
+  	  while ($row = mysqli_fetch_array($result)):
+          //Does not print items the user auctioned
+          if($row['owner_id'] != $_SESSION['user_id']) {
+            $item_name = $row['name'];
+    		    $item_des = $row['description'];
+    		    $item_min = $row['minimumBid'];
+            $item_id =  $row['auction_id'];
+            $item_date = $row['biddate'];
+            $item_time = $row['bidtime'];
+            $item_date = $item_date.' '.$item_time;
 
-	  while ($row = mysqli_fetch_array($result)):
-        //Does not print items the user auctioned
-        if($row['owner_id'] != $_SESSION['user_id']) {
-          $item_name = $row['name'];
-  		    $item_des = $row['description'];
-  		    $item_min = $row['minimumBid'];
-          $item_id =  $row['auction_id'];
-          $item_date = $row['biddate'];
-          $item_time = $row['bidtime'];
-          $item_date = $item_date.' '.$item_time;
+            echo '<br>
+            Item Name: '.$item_name.'<br>
+  		      Description: '.$item_des.'<br>
+  			    Minimum Bid: $'.$item_min.'<br>
+            Auction End Date: '.$item_date.'<br>';
+            $today = date("Y-m-d H:i:s");
+            //echo"$today $item_date";
 
-          echo '<br>
-          Item Name: '.$item_name.'<br>
-		      Description: '.$item_des.'<br>
-			     Minimum Bid: $'.$item_min.'<br>
-          Auction End Date: '.$item_date.'<br>';
-          $today = date("Y-m-d H:i:s");
-          //echo"$today $item_date";
-
-          if($today > $item_date) {
-              echo '<button class="btn btn-outline-secondary" type="button" id="button-addon1">This Auction has Ended</button>';
-          } else {
-              echo'<a type="button" class="btn btn-info" href="../Createbid/bid.php?auction_id='.$item_id.'&item_name='.$item_name.'&minBid='.$item_min.'">
-              Bid on '.$item_name.'</a><br>';
+            if($today > $item_date) {
+                echo '<button class="btn btn-outline-secondary" type="button" id="button-addon1">This Auction has Ended</button>';
+            } else {
+                echo'<a type="button" class="btn btn-info" href="../Createbid/bid.php?auction_id='.$item_id.'&item_name='.$item_name.'&minBid='.$item_min.'">
+                Bid on '.$item_name.'</a><br>';
+            }
+            echo '<br>';
           }
-          echo '<br>';
-        }
-    endwhile;
+      endwhile;
+    }
   }
-
 ?>
 <!--
 <script type="text/javascript">

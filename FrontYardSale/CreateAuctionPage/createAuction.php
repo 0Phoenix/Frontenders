@@ -11,7 +11,11 @@
     <title>Create Auction</title>
   </head>
   <body>
+    <div class="page-header">
+      <h1 class="display-1 text-center">Create Auction</h1>
 
+    </div> <!-- page-header -->
+    <hr>
   <?php include 'DBauction.php'; ?>
 
 
