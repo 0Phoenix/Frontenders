@@ -1,0 +1,21 @@
+Group Name: The Frontenders
+Team members: Mark-Anthony Andrade, Isaac Thomas, Luci Tran, Thomas Truong
+
+Instructions:
+	To run code, you must have XAMPP downloaded. The download
+	link is: https://www.apachefriends.org/index.html 
+	
+	Once XAMPP is downloaded, move the FrontYardSale directory
+	into xampp\htdocs documents. If you installed it on your C drive
+	then this should be the path to move the FrontYardSale directory
+	into: C:\xampp\htdocs
+	
+	Once the FrontYardSale file is in that directory, open the xampp console and
+	under "Actions" of the Apache and MySQL rows click start.
+	
+	To access the homepage, type localhost/FrontYardSale in the
+	web bar. From there you can access our website.
+	
+	*Note: On create auction, the formats for data and time are
+	Date: yyyy-mm-dd
+	Time: hh:mm:ss
